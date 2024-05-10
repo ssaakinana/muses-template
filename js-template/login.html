@@ -2,25 +2,32 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <!-- 文字エンコーディングをUTF-8に設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- モバイルデバイスでの表示を最適化 -->
     <title>MUSESログイン</title>
+    <!-- ページのタイトル -->
   </head>
   <body>
     ユーザー名：<input /> <button>ログイン</button>
+    <!-- ユーザー名入力欄とログインボタン -->
 
     <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        delete sessionStorage.username;
-        document.querySelector('input').value = '武庫川　花子';
+      // ページの読み込みが完了した時に実行される処理
+      document.addEventListener("DOMContentLoaded", async () => {
+        delete sessionStorage.username; // セッションストレージからユーザー名を削除
+        document.querySelector("input").value = "武庫川　花子"; // デフォルトのユーザー名を設定
       });
 
-      document.querySelector('button').addEventListener('click', () => {
-        const username = document.querySelector('input').value;
+      // ログインボタンがクリックされた時に実行される処理
+      document.querySelector("button").addEventListener("click", () => {
+        const username = document.querySelector("input").value; // 入力されたユーザー名を取得
         if (!username) {
-          window.alert('ユーザー名を入力してください');
+          // もしユーザー名が空の場合はアラートを表示
+          window.alert("ユーザー名を入力してください");
         } else {
-          sessionStorage.username = username;
-          location.href = 'index.html';
+          sessionStorage.username = username; // セッションストレージにユーザー名を保存
+          location.href = "index.html"; // index.htmlにリダイレクト
         }
       });
     </script>
