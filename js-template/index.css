@@ -1,190 +1,220 @@
+/* ルート要素のフォントサイズと背景色の設定 */
 :root {
   font-size: 16px;
-  --bg-color: #555555;
+  --bg-color: #555555; /* 背景色のカスタムプロパティ */
 }
 
+/* body要素のスタイル */
 body {
-  box-sizing: border-box;
-  background-color: #fefff2;
-  width: 430px;
-  border: solid lightgray 1px;
-  margin: 0;
-  padding: 0.5rem;
+  box-sizing: border-box; /* ボックスモデルの設定 */
+  background-color: #fefff2; /* 背景色の設定 */
+  width: 430px; /* 幅の設定 */
+  border: solid lightgray 1px; /* 境界線のスタイル */
+  margin: 0; /* マージンの設定 */
+  padding: 0.5rem; /* 余白の設定 */
 }
 
+/* header要素のスタイル */
 header {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* 下方向のマージンの設定 */
 }
 
+/* ロゴのスタイル */
 figure#logo {
-  margin: 1rem 0;
+  margin: 1rem 0; /* マージンの設定 */
 }
 
+/* ロゴ画像のスタイル */
 #logo img {
-  width: 16rem;
-  height: 3rem;
+  width: 16rem; /* 幅の設定 */
+  height: 3rem; /* 高さの設定 */
 }
 
+/* ユーザー名のスタイル */
 #user_name {
-  display: flex;
-  align-items: center;
-  background-color: #cccccc;
-  margin: 1rem 5px;
-  gap: 0.5rem;
-  width: fit-content;
-  padding-right: 1rem;
-  height: 1.7rem;
+  display: flex; /* フレックスレイアウトの設定 */
+  align-items: center; /* アイテムの垂直方向の配置方法の設定 */
+  background-color: #cccccc; /* 背景色の設定 */
+  margin: 1rem 5px; /* マージンの設定 */
+  gap: 0.5rem; /* アイテム間の間隔の設定 */
+  width: fit-content; /* 幅の内容に合わせる設定 */
+  padding-right: 1rem; /* 右側の余白の設定 */
+  height: 1.7rem; /* 高さの設定 */
 }
 
+/* ユーザーアイコン画像のスタイル */
 #user_name img {
-  height: 1.5rem;
-  margin: 0.1rem;
-  background-color: var(--bg-color);
+  height: 1.5rem; /* 高さの設定 */
+  margin: 0.1rem; /* マージンの設定 */
+  background-color: var(--bg-color); /* 背景色の設定 */
 }
 
+/* 上部メニューのスタイル */
 #upper_menu {
-  display: flex;
-  font-size: 0.75rem;
-  line-height: 1.2;
-  color: #330066;
-  margin: 1rem 0;
+  display: flex; /* フレックスレイアウトの設定 */
+  font-size: 0.75rem; /* フォントサイズの設定 */
+  line-height: 1.2; /* 行の高さの設定 */
+  color: #330066; /* 文字色の設定 */
+  margin: 1rem 0; /* マージンの設定 */
 }
 
+/* 上部メニューの各要素のスタイル */
 #upper_menu div {
-  padding: 0.5rem;
-  width: 4.5rem;
-  text-align: center;
+  padding: 0.5rem; /* 内側の余白の設定 */
+  width: 4.5rem; /* 幅の設定 */
+  text-align: center; /* テキストの水平方向の配置方法の設定 */
 }
 
+/* 上部メニュー内の画像のスタイル */
 #upper_menu img {
-  width: 2rem;
+  width: 2rem; /* 幅の設定 */
 }
 
+/* 上部メニュー内の段落のスタイル */
 #upper_menu p {
-  margin: 0;
+  margin: 0; /* マージンの設定 */
 }
 
+/* 上部メニュー内の各要素の色を指定 */
 #upper_menu div:nth-child(1) {
-  background-color: #ef8683;
+  background-color: #ef8683; /* 背景色の設定 */
 }
 
 #upper_menu div:nth-child(2) {
-  background-color: #ffff91;
+  background-color: #ffff91; /* 背景色の設定 */
 }
 
 #upper_menu div:nth-child(3) {
-  background-color: #ef86bd;
+  background-color: #ef86bd; /* 背景色の設定 */
 }
 
+/* 新着情報セクションのスタイル */
 #news {
-  background-color: #f0f0f0;
-  padding: 0.5rem;
-  margin: 1rem 0;
+  background-color: #f0f0f0; /* 背景色の設定 */
+  padding: 0.5rem; /* 内側の余白の設定 */
+  margin: 1rem 0; /* マージンの設定 */
 }
 
+/* 新着情報のタイトルのスタイル */
 #news_title {
-  display: flex;
-  color: white;
-  background-color: var(--bg-color);
-  padding: 0.5rem;
+  display: flex; /* フレックスレイアウトの設定 */
+  color: white; /* 文字色の設定 */
+  background-color: var(--bg-color); /* 背景色の設定 */
+  padding: 0.5rem; /* 内側の余白の設定 */
 }
 
+/* 新着情報内の画像のスタイル */
 :is(#news_title, #news_num) img {
-  height: 1.5rem;
-  margin-right: 0.5rem;
+  height: 1.5rem; /* 高さの設定 */
+  margin-right: 0.5rem; /* 右側のマージンの設定 */
 }
 
+/* 新着情報の数値のスタイル */
 #news_num {
-  display: flex;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  color: blue;
+  display: flex; /* フレックスレイアウトの設定 */
+  margin-top: 0.5rem; /* 上方向のマージンの設定 */
+  margin-left: 0.5rem; /* 左側のマージンの設定 */
+  color: blue; /* 文字色の設定 */
 }
 
+/* ナビゲーションリンクのスタイル */
 #link {
-  display: flex;
-  gap: 1.5rem;
+  display: flex; /* フレックスレイアウトの設定 */
+  gap: 1.5rem; /* アイテム間の間隔の設定 */
 }
 
+/* ナビゲーションリンクの各要素のスタイル */
 #link div {
-  width: fit-content;
-  color: white;
-  background-color: var(--bg-color);
-  padding: 0.5rem 2rem;
-  margin-left: 0.5rem;
+  width: fit-content; /* 幅を内容に合わせる設定 */
+  color: white; /* 文字色の設定 */
+  background-color: var(--bg-color); /* 背景色の設定 */
+  padding: 0.5rem 2rem; /* 内側の余白の設定 */
+  margin-left: 0.5rem; /* 左側のマージンの設定 */
 }
 
+/* ナビゲーションリンク内のリンクのスタイル */
 #link div a {
-  color: white;
-  text-decoration: none;
-  display: block;
+  color: white; /* 文字色の設定 */
+  text-decoration: none; /* テキストの下線を除去する設定 */
+  display: block; /* ブロック要素として表示する設定 */
 }
 
+/* header内の最後の段落のスタイル */
 header p:last-child {
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
+  margin-left: 0.5rem; /* 左側のマージンの設定 */
+  padding-left: 0.5rem; /* 左側の余白の設定 */
 }
 
+/* メインコンテンツのスタイル */
 main#top {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.75rem;
-  gap: 1rem 0.4rem;
-  color: #44077d;
-  margin-bottom: 2rem;
-  margin-left: 0.5rem;
+  display: flex; /* フレックスレイアウトの設定 */
+  flex-wrap: wrap; /* 要素が行を超えた場合に折り返す設定 */
+  font-size: 0.75rem; /* フォントサイズの設定 */
+  gap: 1rem 0.4rem; /* アイテム間の間隔の設定 */
+  color: #44077d; /* 文字色の設定 */
+  margin-bottom: 2rem; /* 下方向のマージンの設定 */
+  margin-left: 0.5rem; /* 左側のマージンの設定 */
 }
 
+/* メインコンテンツ内のリンクのスタイル */
 :is(#upper_menu, main#top) a {
-  color: #44077d;
-  text-decoration: none;
-  display: block;
+  color: #44077d; /* 文字色の設定 */
+  text-decoration: none; /* テキストの下線を除去する設定 */
+  display: block; /* ブロック要素として表示する設定 */
 }
 
+/* メインコンテンツ内の各要素のスタイル */
 main#top div {
-  width: 5rem;
-  width: 27%;
-  text-align: center;
-  padding: 0.5rem;
+  width: 5rem; /* 幅の設定 */
+  width: 27%; /* 幅の設定 */
+  text-align: center; /* テキストの水平方向の配置方法の設定 */
+  padding: 0.5rem; /* 内側の余白の設定 */
 }
 
+/* メインコンテンツ内の各要素の背景色を指定 */
 main#top div:nth-child(1) {
-  background-color: #f4bab8;
+  background-color: #f4bab8; /* 背景色の設定 */
 }
 
 main#top div:nth-child(2) {
-  background-color: #f9dcbc;
+  background-color: #f9dcbc; /* 背景色の設定 */
 }
-
+/* メインコンテンツ内の3番目の要素のスタイル */
 main#top div:nth-child(3) {
-  font-size: 0.6rem;
-  background-color: #f3bada;
+  font-size: 0.6rem; /* フォントサイズの設定 */
+  background-color: #f3bada; /* 背景色の設定 */
 }
 
+/* メインコンテンツ内の4番目の要素のスタイル */
 main#top div:nth-child(4) {
-  background-color: #b55c92;
+  background-color: #b55c92; /* 背景色の設定 */
 }
 
+/* メインコンテンツ内の5番目の要素のスタイル */
 main#top div:nth-child(5) {
-  background-color: #bddafa;
+  background-color: #bddafa; /* 背景色の設定 */
 }
 
+/* メインコンテンツ内の6番目の要素のスタイル */
 main#top div:nth-child(6) {
-  background-color: #c6fddd;
+  background-color: #c6fddd; /* 背景色の設定 */
 }
 
+/* メインコンテンツ内の7番目の要素のスタイル */
 main#top div:nth-child(7) {
-  background-color: #e1febe;
+  background-color: #e1febe; /* 背景色の設定 */
 }
 
+/* フッター内の段落のスタイル */
 footer p {
-  font-weight: bold;
-  margin-bottom: 2rem;
+  font-weight: bold; /* フォントの太さを太字にする設定 */
+  margin-bottom: 2rem; /* 下方向のマージンの設定 */
 }
 
+/* 追加情報のスタイル */
 #information {
-  border: solid 1px #feb64a;
-  border-radius: 0.5rem;
-  height: 5rem;
-  background-color: white;
+  border: solid 1px #feb64a; /* 境界線のスタイルと色の設定 */
+  border-radius: 0.5rem; /* ボーダーの角の丸みの設定 */
+  height: 5rem; /* 高さの設定 */
+  background-color: white; /* 背景色の設定 */
 }
