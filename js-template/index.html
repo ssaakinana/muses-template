@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- 文字エンコーディングをUTF-8に設定 -->
     <meta charset="UTF-8" />
+    <!-- モバイルデバイスでの表示を最適化 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ページのタイトル -->
     <title>MUSESトップ</title>
+    <!-- CSSファイルをリンク -->
     <link href="index.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      //ページのヘッダーセクションを定義
+      <!-- ロゴ画像 -->
       <figure id="logo">
-        //ロゴを含むセクションを定義
         <img src="img/logo.png" />
       </figure>
+      <!-- ユーザー名表示 -->
       <div id="user_name">
         <img src="img/user_icon.png" /><span></span> さん
       </div>
+      <!-- 上部メニュー -->
       <div id="upper_menu">
+        <!-- PC版リンク -->
         <div>
           <img src="img/pc_site.png" /><br />
           PC版
         </div>
+        <!-- 残り時間表示 -->
         <div>
           <img src="img/timeout.png" /><br />
           残り<br />約40分
         </div>
+        <!-- ログアウトリンク -->
         <div>
           <a href="login.html">
             <img src="img/logout.png" /><br />
@@ -32,8 +40,11 @@
           </a>
         </div>
       </div>
+      <!-- 新着情報 -->
       <div id="news">
+        <!-- タイトル -->
         <div id="news_title"><img src="img/infoman.png" />新着情報</div>
+        <!-- 未読掲示数 -->
         <div id="news_num">
           <img src="img/board.png" />未読掲示が&nbsp;<span
             class="unread"
@@ -42,32 +53,46 @@
         </div>
         ///
       </div>
+      <!-- ナビゲーションリンク -->
       <div id="link">
         <div>HOME &gt;</div>
       </div>
+      <!-- ユーザー未登録時のメッセージ -->
       <p>登録されていません</p>
     </header>
 
     <main id="top">
+      <!-- メインコンテンツ -->
       <div>
+        <!-- info@MUSESへのリンク -->
         <a href="menu.html"><img src="img/info_muses.png" /><br />info@MUSES</a>
       </div>
+      <!-- メニューアイテム: 履修 -->
       <div><img src="img/paper.png" /><br />履修</div>
+      <!-- メニューアイテム: 休講・補講等情報参照 -->
       <div><img src="img/cancelling.png" /><br />休講・補講等情報参照</div>
+      <!-- メニューアイテム: 出欠 -->
       <div><img src="img/paper.png" /><br />出欠</div>
+      <!-- メニューアイテム: 授業アンケート -->
       <div><img src="img/survey.png" /><br />授業アンケート</div>
+      <!-- メニューアイテム: キャリア支援 -->
       <div><img src="img/career.png" /><br />キャリア支援</div>
+      <!-- メニューアイテム: シラバス -->
       <div><img src="img/syllabus.png" /><br />シラバス</div>
     </main>
 
     <footer>
+      <!-- フッターナビゲーションリンク -->
       <div id="link">
         <div>HOME &gt;</div>
       </div>
+      <!-- 情報セクションのタイトル -->
       <p>Information</p>
+      <!-- 追加情報 -->
       <div id="information"></div>
     </footer>
 
+    <!-- JavaScriptファイルの読み込み -->
     <script src="index.js"></script>
   </body>
 </html>
