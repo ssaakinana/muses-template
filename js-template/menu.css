@@ -1,14 +1,17 @@
+/* メイン情報コンテナのスタイル */
 main#info {
   margin-bottom: 2rem;
   border: solid 0.5rem #f0f0f0;
 }
 
+/* 情報コンテナのヘッダーとフッターのスタイル */
 :is(#info_header, #info_footer) {
   padding: 0.5rem;
   color: white;
   background-color: #5a9674;
 }
 
+/* 警告メッセージのスタイル */
 #caution {
   font-size: 1.2rem;
   font-weight: bold;
@@ -36,6 +39,7 @@ main#info {
   width: 1rem;
 }
 
+/* 未読メッセージ数のスタイル */
 #unread_num .exmark {
   vertical-align: top;
 }
