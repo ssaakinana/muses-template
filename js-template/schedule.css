@@ -6,7 +6,8 @@ main#info {
 :is(#info_header, #info_footer) {
   padding: 0.5rem;
   color: white;
-  background-color: #5a9674;
+  background-color: #e8a4d6;
+  text-align: center;
 }
 
 #caution {
@@ -119,7 +120,7 @@ main#info {
   margin-left: 0.5rem;
 }
 
-.calender_image {
-  width: 400px;
-  height: 300px;
+.schedule_image {
+  width: 390px;
+  height: 250px;
 }
