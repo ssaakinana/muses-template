@@ -6,6 +6,11 @@
     <title>MUSESメニュー</title>
     <link href="index.css" rel="stylesheet" />
     <link href="calender.css" rel="stylesheet" />
+    <!-- FullCalendar CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -31,22 +36,64 @@
       </div>
       <div id="news">
         <div id="news_title"><img src="img/infoman.png" />新着情報</div>
-        <div id="news_num"><img src="img/board.png" />未読掲示が 3件 あります！</div>
+        <div id="news_num">
+          <img src="img/board.png" />未読掲示が 3件 あります！
+        </div>
       </div>
       <div id="link">
         <div><a href="index.html">HOME &gt;</a></div>
-        <div>キャリア支援 &gt;</div>
+        <div><a href="careermenu.html">キャリア支援 &gt;</a></div>
       </div>
     </header>
 
     <main id="info">
-      <div id="info_header"><img src="img/loupe.gif" />Myキャリアカレンダー</div>
-      <img src="calender.png" alt="calender photo" class="calender_image"/>
+      <div id="info_header">
+        <img src="img/loupe.gif" />Myキャリアカレンダー
+      </div>
 
+      <!-- カレンダーを表示する要素 -->
+      <div id="calendar"></div>
 
-      
-      </div> 
-      <div id="info_footer"><img src="img/loupe.gif" />Myキャリアカレンダー</div>
+      <!-- イベント追加フォーム -->
+      <div id="event-form">
+        <h3>イベントを追加する</h3>
+        <form id="add-event-form">
+          <label for="event-title">イベントタイトル:</label>
+          <input
+            type="text"
+            id="event-title"
+            name="event-title"
+            required
+          /><br />
+
+          <label for="event-start">開始日:</label>
+          <input
+            type="date"
+            id="event-start"
+            name="event-start"
+            required
+          /><br />
+
+          <label for="event-end">終了日:</label>
+          <input type="date" id="event-end" name="event-end" /><br />
+
+          <label for="event-description">メモ:</label>
+          <textarea id="event-description" name="event-description"></textarea
+          ><br />
+
+          <button type="submit">イベントを追加</button>
+        </form>
+      </div>
+
+      <div id="info_footer">
+        <img src="img/loupe.gif" />Myキャリアカレンダー
+      </div>
+
+      <!-- イベントリスト -->
+      <div id="event-list">
+        <h3>イベントリスト</h3>
+        <ul id="events"></ul>
+      </div>
     </main>
 
     <footer>
@@ -56,5 +103,99 @@
       <p>Information</p>
       <div id="information"></div>
     </footer>
+
+    <!-- FullCalendar JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var eventsEl = document.getElementById("events");
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: "dayGridMonth", // 月表示
+          locale: "ja", // 日本語化
+          events: [
+            // 初期イベントの例
+            {
+              id: "1",
+              title: "イベント1",
+              start: "2024-06-25",
+              end: "2024-06-27",
+              description: "初期イベント1のメモ",
+            },
+            {
+              id: "2",
+              title: "イベント2",
+              start: "2024-06-30",
+              description: "初期イベント2のメモ",
+            },
+          ],
+          eventClick: function (info) {
+            if (confirm("イベントを削除しますか？")) {
+              info.event.remove(); // イベントを削除
+              updateEventList(); // イベントリストを更新
+            }
+          },
+        });
+
+        calendar.render();
+
+        // イベントリストの更新
+        function updateEventList() {
+          eventsEl.innerHTML = "";
+          calendar.getEvents().forEach(function (event) {
+            var li = document.createElement("li");
+            li.textContent =
+              event.title +
+              " (" +
+              event.startStr +
+              (event.endStr ? " - " + event.endStr : "") +
+              ")";
+            li.dataset.eventId = event.id;
+            var delBtn = document.createElement("button");
+            delBtn.textContent = "削除";
+            delBtn.addEventListener("click", function () {
+              event.remove();
+              updateEventList();
+            });
+            li.appendChild(delBtn);
+            eventsEl.appendChild(li);
+          });
+        }
+
+        // 初期イベントリストの更新
+        updateEventList();
+
+        // イベント追加フォームの処理
+        document
+          .getElementById("add-event-form")
+          .addEventListener("submit", function (e) {
+            e.preventDefault(); // フォームのデフォルトの送信を防ぐ
+
+            // フォームからの入力データを取得
+            var title = document.getElementById("event-title").value;
+            var start = document.getElementById("event-start").value;
+            var end = document.getElementById("event-end").value;
+            var description =
+              document.getElementById("event-description").value;
+
+            // カレンダーに新しいイベントを追加
+            calendar.addEvent({
+              id: String(Date.now()), // 一意のIDとして現在のタイムスタンプを使用
+              title: title,
+              start: start,
+              end: end || start, // 終了日が指定されていない場合、開始日と同じにする
+              description: description,
+            });
+
+            // フォームの入力をクリア
+            document.getElementById("add-event-form").reset();
+
+            // イベントリストを更新
+            updateEventList();
+          });
+      });
+    </script>
   </body>
 </html>
