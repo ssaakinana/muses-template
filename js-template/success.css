@@ -6,7 +6,7 @@ main#info {
 :is(#info_header, #info_footer) {
   padding: 0.5rem;
   color: white;
-  background-color: #5a9674;
+  background-color: #e6cd81;
 }
 
 #caution {
@@ -123,6 +123,7 @@ main#info {
   width: 400px;
   height: 300px;
 }
+
 .site {
   display: flex;
   align-items: center;
@@ -132,6 +133,7 @@ main#info {
 .site img {
   margin-right: 10px; /* 画像とテキストの間のスペースを調整 */
 }
+
 .site span {
   font-size: 12px; /* 文字の大きさを小さくする */
 }
