@@ -123,3 +123,8 @@ main#info {
   width: 400px;
   height: 300px;
 }
+
+.small-image {
+  width: 200px;
+  height: auto;
+}
